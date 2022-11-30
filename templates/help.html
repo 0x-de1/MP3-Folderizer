@@ -1,0 +1,65 @@
+{% extends "layout.html" %} {% block title %} Help {% endblock %} {% block main
+%}
+<div
+  class="container border border-2 rounded-5 shadow-lg p-3 mb-5 bg-body rounded text-start"
+>
+  <p class="fs-5 text-center p-5">
+    MP3 Folderizer will restructue your mp3 library into a folder structure
+    based on Album, Artist, Album artist, Year or Genre
+  </p>
+
+  <div class="border border-5 rounded-5 m-5 p-5 bg-body rounded">
+    <h2 class="display-6 p-3 text-center">Step 1: Load MP3 files</h2>
+    <p class="fs-5">
+      Enter your source folder path here. MP3 Folderizer will search all
+      directories in your source folder for mp3 files
+    </p>
+  </div>
+  <div class="border border-5 rounded-5 m-5 p-5 bg-body rounded">
+    <h2 class="display-6 p-3 text-center">Step 2: Categorize MP3 files</h2>
+    <p class="fs-5">
+      Select the category you want the mp3 files to be categorized in to folders
+      by. Options include Album, Artist, Album artist, Year and Genre.
+    </p>
+  </div>
+  <div class="border border-5 rounded-5 m-5 p-5 bg-body rounded">
+    <h2 class="display-6 p-3 text-center">Step 3: Proceed to preview</h2>
+    <p class="fs-5">
+      Press proceed to preview. You will now see the folder list and the number
+      of mp3 files in each folder.
+    </p>
+    <blockquote>
+      <ul class="fs-5">
+        <li>
+          To view full list of mp3 files click on
+          <strong>Show/Hide MP3 list</strong> button
+        </li>
+        <li>
+          To change the category select from drop down and press
+          <strong><em>Change category</em></strong> button
+        </li>
+      </ul>
+    </blockquote>
+  </div>
+  <div class="border border-5 rounded-5 m-5 p-5 bg-body rounded">
+    <h2 class="display-6 p-3 text-center">Step 4: Create folder structure</h2>
+    <ol class="fs-5">
+      <li>Enter your destination folder path to create the folder structure</li>
+      <li>Select whether mp3 files are to be copied or moved</li>
+    </ol>
+    <p class="fs-5">
+      If moved, all previous files will be removed and moved to the new file
+      structure at the provided destination folder
+    </p>
+    <p class="fs-5">Press <strong>Proceed</strong> to continue</p>
+  </div>
+  <div class="border border-5 rounded-5 m-5 p-5 bg-body rounded">
+    <h2 class="display-6 p-3 text-center">Step 5: Summery</h2>
+    <p class="fs-5">
+      View all the errors detected during the operation and folder structure
+      created
+    </p>
+  </div>
+</div>
+
+{% endblock %}

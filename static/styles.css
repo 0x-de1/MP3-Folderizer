@@ -1,0 +1,49 @@
+/* Size for brand */
+nav .navbar-brand {
+  font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue {
+  color: #537fbe;
+}
+
+.feedback1 {
+  padding: 30px;
+}
+#padding {
+  padding-bottom: 30px;
+}
+#buy {
+  color: #2e944b;
+}
+
+#sell {
+  color: #ea433b;
+}
+.warning {
+  color: #ea433b;
+}
+input {
+  margin: 0.4rem;
+}
+
+.table-responsive {
+  max-height: 500px;
+}
+#copy_gif {
+  display: none;
+  max-height: 100px;
+}
+#errors {
+  text-align: left;
+}
+.table {
+  max-width: 100vw;
+}
+.display-5 .display-6 {
+  text-align: center;
+}
+.mp3 {
+  color: steelblue;
+}

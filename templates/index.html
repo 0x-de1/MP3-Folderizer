@@ -1,0 +1,65 @@
+{% extends "layout.html" %} {% block title %} Home {% endblock %} {% block main
+%}
+<!-- user’s current cash balance -->
+<!-- grand total (i.e., stocks’ total value plus cash).  -->
+
+<div
+  class="container border border-2 rounded-5 shadow-lg p-5 m-auto bg-body rounded"
+>
+  <h4 class="display-6 p-3">Load MP3 files</h4>
+
+  <form action="/" method="post">
+    <div class="form-floating mb-5 mx-5">
+      <input
+        autocomplete="on"
+        autofocus
+        required
+        class="form-control {% if invalid_path or no_mp3s %} is-invalid {% endif %}"
+        id="source"
+        name="source"
+        type="text"
+        placeholder="Enter source folder location"
+      />
+      <label for="source" class="form-label"
+        >Enter source folder location:</label
+      >
+      {% if invalid_path %}
+      <div id="validationServerUsernameFeedback" class="invalid-feedback">
+        Entered path does not exist.
+      </div>
+      {% elif no_mp3s %}
+      <h6 class="warning">No MP3s in entered path</h6>
+      {% else %} {% endif %}
+    </div>
+    <h4 class="display-6 p-3">Categorize MP3 files</h4>
+    <div class="form-floating mx-5">
+      <select
+        name="category"
+        id="category"
+        class="form-select"
+        aria-label="Floating label select example"
+      >
+        {% for category in PROPERTIES %}
+        <option value="{{category}}">{{category.capitalize()}}</option>
+        {% endfor %}
+      </select>
+      <label for="category">Categorize the mp3 files to folders by:</label>
+    </div>
+
+    <button type="submit" id="submit" class="btn mt-4 btn-primary">
+      Proceed to preview
+    </button>
+    <div id="submit_b"></div>
+  </form>
+  <div id="loading"></div>
+</div>
+<script>
+  document.querySelector('#submit').addEventListener('click', () => {
+    if (document.querySelector('#source').value) {
+      document.querySelector('#submit').style.display = 'none';
+      document.querySelector('#submit_b').innerHTML =
+        '<button class="btn btn-primary mt-4" type="button" disabled> <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Finding all MP3 files </button>';
+    }
+  });
+</script>
+{% endblock %}

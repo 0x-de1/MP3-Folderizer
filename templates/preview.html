@@ -1,0 +1,175 @@
+{% extends "layout.html" %} {% block title %} Preview {% endblock %} {% block
+main %}
+
+<div class="container border rounded-5 shadow p-5 mb-5 bg-body rounded">
+  <div class="row align-items-center">
+    <div class="col mb-1 p-5 align-self-center">
+      <h6 class="display-6 p-5">Change category</h6>
+
+      <form action="/preview" method="post">
+        <div class="form-floating">
+          <select
+            name="category"
+            id="category"
+            class="form-select"
+            aria-label="Floating label select example"
+          >
+            {% for category in PROPERTIES %} {% if selection== category %}
+            <option value="{{category}}" selected>
+              {{category.capitalize()}}
+            </option>
+            {% else %}
+            <option value="{{category}}">{{category.capitalize()}}</option>
+            {% endif %} {% endfor %}
+          </select>
+          <span>
+            <button
+              class="btn btn-outline-primary"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#mp3list"
+              aria-expanded="false"
+              aria-controls="mp3list"
+            >
+              Show/Hide MP3 list
+            </button>
+          </span>
+          <label for="category">Categorize the mp3 files to folders by:</label>
+          <button
+            type="submit"
+            id="submit_1"
+            class="btn btn-outline-primary m-4"
+          >
+            Change category
+          </button>
+          <span id="submit_1a"></span>
+        </div>
+      </form>
+      <div id="loading"></div>
+    </div>
+    <div class="col mb-1 px-5 align-self-center">
+      {% if count %}
+      <div class="alert alert-info mb-5" role="alert">
+        {{count}} MP3 files found {% if duplicates %} and {{duplicates}}
+        duplicates caught. {% endif %}
+      </div>
+      {% endif %}
+      <div class="table-responsive">
+        {% for table in folder_table %} {{ table|safe }} {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div id="mp3list" class="collapse border rounded-5 p-5 mb-5 bg-body rounded">
+    <h6 class="display-6 p-2">MP3 List</h6>
+    <div class="table-responsive p-3">
+      {% for table in mp3s_table %} {{ table|safe }} {% endfor %}
+    </div>
+  </div>
+</div>
+<div class="container border rounded-5 shadow p-5 mb-5 bg-body rounded">
+  <div class="row">
+    <div class="col mb-1 p-3">
+      <h4 class="display-6 p-3">Create folder structure</h4>
+      <form action="/save" method="post" class="needs-validation">
+        <div class="form-floating mb-5 mx-5">
+          <input
+            autocomplete="on"
+            required
+            class="form-control {% if invalid_path %} is-invalid {% endif %}"
+            id="destination"
+            name="destination"
+            placeholder="Enter destination for folder structure"
+            type="text"
+          />
+          <label for="source" class="form-label"
+            >Enter destination for folder structure</label
+          >
+          {% if invalid_path %}
+          <div id="validationServerUsernameFeedback" class="invalid-feedback">
+            Entered path does not exist.
+          </div>
+          {% elif no_mp3s %}
+          <h6 class="warning">No MP3s in entered path</h6>
+          {% else %} {% endif %}
+        </div>
+
+        <p class="fs-4 fst-normal">
+          Do you want the mp3 files to be copied or moved?
+        </p>
+        <!-- <label for="radio" class="form-label fw-bold"
+          >Do you want the mp3 files to be copied or moved?</label
+        > -->
+        <div id="radio" class="p-3">
+          <input
+            type="radio"
+            name="method"
+            id="copy"
+            value="copying"
+            class="radio_b"
+            required
+          />
+          <label for="copy" class="form-label">Copy</label>
+          <input
+            type="radio"
+            name="method"
+            id="move"
+            value="moving"
+            class="radio_b"
+            required
+          />
+          <label for="move" class="form-label">Move</label>
+        </div>
+        <div id="warning"></div>
+
+        <div><img id="copy_gif" src="\static\copy.gif" /></div>
+        <button type="submit" id="submit_2" class="btn btn-primary">
+          Proceed
+        </button>
+        <div id="submit_2a"></div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelector('#submit_1').addEventListener('click', () => {
+    document.querySelector('#submit_1').style.display = 'none';
+    document.querySelector('#submit_1a').innerHTML =
+      '<button class="btn btn-primary m-2" type="button" disabled> <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading  </button>';
+  });
+
+  // Save
+  function capitalize(string) {
+    return string[0].toUpperCase() + string.slice(1).toLowerCase();
+  }
+  // Alert when selecting copy
+  document.querySelector('#move').addEventListener('click', () => {
+    document.querySelector('#warning').innerHTML =
+      '<div class="alert alert-danger" role="alert">All previous files will be removed and moved to a new file structure at the provided destination folder! Please reconsider. </div>';
+  });
+  // Alert when selecting move
+  document.querySelector('#copy').addEventListener('click', () => {
+    document.querySelector('#warning').innerHTML =
+      '<div class="alert alert-info" role="alert"> All previous files will be preserved and copied to a new file structure at the provided destination folder.  </div> ';
+  });
+
+  // Button change according to move or copy
+  document.querySelector('#submit_2').addEventListener('click', () => {
+    if (
+      document.querySelector('#destination').value &&
+      document.querySelector('.radio_b:checked').value
+    ) {
+      const method = capitalize(
+        document.querySelector('.radio_b:checked').value
+      );
+
+      document.querySelector('#submit_2').style.display = 'none';
+      document.querySelector('#copy_gif').style.display = 'inline';
+      document.querySelector(
+        '#submit_2a'
+      ).innerHTML = ` <button class="btn btn-primary" type="button" disabled> <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" > </span> ${method} mp3 files </button> `;
+    }
+  });
+</script>
+
+{% endblock %}
