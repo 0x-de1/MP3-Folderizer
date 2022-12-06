@@ -6,7 +6,7 @@
 
 ## Installation:
 
-Download the latest realease (.exe) file and run or Run app.py file to open the web app and follow the instructions below  
+Download the latest release (.exe) file and run or Run app.py file to open the web app and follow the instructions below  
 
 ## Usage Instructions:
 
