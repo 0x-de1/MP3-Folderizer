@@ -2,11 +2,11 @@
 
 #### Video Demo: https://www.youtube.com/watch?v=mvjOIrduhq8
 
-#### Description:MP3 Folderizer is a software that can organize your mp3 library into folders based on Album, Artist, Year, Album artist or Genre
+#### Description: MP3 Folderizer is a software that can organize your mp3 library into folders based on Album, Artist, Year, Album artist or Genre
 
 ## Installation:
 
-Run app.py file to open the web app and follow the instructions below
+Download the latest realease (.exe) file and run or Run app.py file to open the web app and follow the instructions below  
 
 ## Usage Instructions:
 
