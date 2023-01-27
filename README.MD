@@ -6,19 +6,24 @@
 
 # Installation:
 
-Run app.py file to open the web app and follow the instructions below
+Download the latest release (.exe) file and run or Run app.py file to open the web app and follow the instructions below
 
 # Usage Instructions:
+![home](static/home.jpg "home" )
 
-#### Step 1: Load MP3 files
+## Step 1: Load MP3 files
 
 Enter your source folder path here. MP3 Folderizer will search all directories in your source folder for mp3 files
 
 ## Step 2: Categorize MP3 files
 
+![category](static/category.png "category" )
+
 Select the category you want the mp3 files to be categorized in to folders by. Options include Album, Artist, Album artist, Year and Genre.
 
 ## Step 3: Proceed to preview
+![mp3list](static/mp3list.png "mp3list" )
+
 
 Press proceed to preview. You will now see the folder list and the number of mp3 files in each folder.
 
@@ -26,6 +31,7 @@ Press proceed to preview. You will now see the folder list and the number of mp3
 > - To change the category select from drop down and press **_Change category_** button
 
 ## Step 4: Create folder structure
+![moving](static/moving.png "moving" )
 
 > 1. Enter your destination folder path to create the folder structure
 > 2. Select whether mp3 files are to be copied or moved
@@ -35,6 +41,7 @@ If moved, all previous files will be removed and moved to the new file structure
 Press **Proceed** to continue
 
 ## Step 5: Summery
+![summery](static/summery.png "summery" )
 
 View all the errors detected during thew operation and folder structure created
 
