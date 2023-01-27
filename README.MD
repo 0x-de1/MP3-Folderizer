@@ -26,10 +26,10 @@ Select the category you want the mp3 files to be categorized in to folders by. O
 Press proceed to preview. You will now see the folder list and the number of mp3 files in each folder.
 
 
-> - To view full list of mp3 files click on **\*Show/Hide MP3** list button\*
-![mp3list](static/mp3list.png "mp3list" )
 > - To change the category select from drop down and press **_Change category_** button
 ![category](static/category.png "category" )
+> - To view full list of mp3 files click on **\*Show/Hide MP3** list button\*
+![mp3list](static/mp3list.png "mp3list" )
 
 ## Step 4: Create folder structure
 
