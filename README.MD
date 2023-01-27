@@ -1,31 +1,31 @@
 # MP3 Folderizer
+![title](static/title.jpg "title" )
+## Video Demo: https://www.youtube.com/watch?v=mvjOIrduhq8
 
-#### Video Demo: https://www.youtube.com/watch?v=mvjOIrduhq8
+### Description:MP3 Folderizer is a software that can organize your mp3 library into folders based on Album, Artist, Year, Album artist or Genre
 
-#### Description:MP3 Folderizer is a software that can organize your mp3 library into folders based on Album, Artist, Year, Album artist or Genre
-
-## Installation:
+# Installation:
 
 Run app.py file to open the web app and follow the instructions below
 
-## Usage Instructions:
+# Usage Instructions:
 
 #### Step 1: Load MP3 files
 
 Enter your source folder path here. MP3 Folderizer will search all directories in your source folder for mp3 files
 
-#### Step 2: Categorize MP3 files
+## Step 2: Categorize MP3 files
 
 Select the category you want the mp3 files to be categorized in to folders by. Options include Album, Artist, Album artist, Year and Genre.
 
-#### Step 3: Proceed to preview
+## Step 3: Proceed to preview
 
 Press proceed to preview. You will now see the folder list and the number of mp3 files in each folder.
 
 > - To view full list of mp3 files click on **\*Show/Hide MP3** list button\*
 > - To change the category select from drop down and press **_Change category_** button
 
-#### Step 4: Create folder structure
+## Step 4: Create folder structure
 
 > 1. Enter your destination folder path to create the folder structure
 > 2. Select whether mp3 files are to be copied or moved
@@ -34,11 +34,11 @@ If moved, all previous files will be removed and moved to the new file structure
 
 Press **Proceed** to continue
 
-#### Step 5: Summery
+## Step 5: Summery
 
 View all the errors detected during thew operation and folder structure created
 
-## Project Files/Folders:
+# Project Files/Folders:
 
 <kbd>static</kbd>: Contains all static files required for the flask web app
 
