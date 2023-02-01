@@ -12,8 +12,8 @@ Download the latest release (.exe) file and run or Run app.py file to open the w
 # Usage Instructions:
 
 ## Step 1: Load MP3 files
-
-Enter your source folder path here. MP3 Folderizer will search all directories in your source folder for mp3 files
+Enter your source folder path here. 
+MP3 Folderizer will search all directories in your source folder for mp3 files
 
 ![home](static/home.jpg "home" )
 ## Step 2: Categorize MP3 files
@@ -47,6 +47,14 @@ Press **Proceed** to continue
 ![summery](static/summery.png "summery" )
 
 View all the errors detected during thew operation and folder structure created
+
+### Unordered MP3 library
+![unordered library](static/unordered_library.png "unordered library" )
+### Final folder structure created by MP3-Folderizer
+![created folders](static/created_folders.png "created folders" )
+
+### Inside a folder
+![inside folders](static/inside_folder.png "inside folders" )
 
 # Project Files/Folders:
 
